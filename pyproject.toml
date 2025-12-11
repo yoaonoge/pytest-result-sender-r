@@ -1,0 +1,31 @@
+[project]
+name = "pytest-result-sender-r"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "yoaonoge", email = "yoaonoge@163.com"},
+]
+dependencies = ["pytest>=8.4.2", "black>=25.11.0", "isort>=6.1.0", "flake8>=7.3.0"]
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[project.entry-points.pytest11]
+results_log = "pytest_result_sender_r.plugin"
+
+[tool.pdm.build]
+package-dir = "src"
+
+[tool.pdm.scripts]
+check = { composite = [
+    "isort .",
+    "black .",
+    "flake8 .",
+]}
+
+[tool.pdm]
+distribution = true
