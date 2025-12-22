@@ -17,7 +17,7 @@ build-backend = "pdm.backend"
 [project.entry-points.pytest11]
 results_log = "pytest_result_sender_r.plugin"
 
-[tool.pdm.build]
+[tool.pdm]
 package-dir = "src"
 
 [tool.pdm.scripts]
@@ -26,6 +26,6 @@ check = { composite = [
     "black .",
     "flake8 .",
 ]}
-
-[tool.pdm]
-distribution = true
+#
+#[tool.pdm]
+#distribution = true
