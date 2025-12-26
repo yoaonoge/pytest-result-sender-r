@@ -1,6 +1,6 @@
 [project]
 name = "pytest-result-sender-r"
-version = "0.1.12"
+version = "0.1.13"
 description = "Default template for PDM package"
 authors = [
     {name = "yoaonoge", email = "yoaonoge@163.com"},
@@ -18,10 +18,7 @@ build-backend = "pdm.backend"
 results_log = "pytest_result_sender_r.plugin"
 
 [tool.pdm]
-package-dir = "src"
-
-[tool.pdm.build]
-package-dir = "src"
+# 不要 package-dir
 
 [tool.pdm.build.packages]
 include = ["pytest_result_sender_r"]
